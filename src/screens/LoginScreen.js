@@ -1,38 +1,20 @@
-import React, {
-  useState,
-  useContext,
-} from "react";
-
-import {
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  View,
-} from "react-native";
-
+import React, { useState, useContext } from "react";
+import { Text, TextInput, TouchableOpacity, Image, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 
 import ThemeContext from "../context/ThemeContext";
 import { supabase } from "../services/supabase";
-
 import styles from "../../styles";
 
-export default function LoginScreen({
-  navigation,
-}) {
-  const { theme } =
-    useContext(ThemeContext);
+export default function LoginScreen({ navigation }) {
+  const { theme } = useContext(ThemeContext);
 
-  const [email, setEmail] =
-    useState("");
+  const [email, setEmail] = useState("");
 
-  const [password, setPassword] =
-    useState("");
+  const [password, setPassword] = useState("");
 
-  const [showPassword, setShowPassword] =
-    useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   async function handleLogin() {
     if (!email || !password) {
@@ -40,13 +22,10 @@ export default function LoginScreen({
       return;
     }
 
-    const { error } =
-      await supabase.auth.signInWithPassword(
-        {
-          email,
-          password,
-        }
-      );
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
 
     if (error) {
       alert("Email ou senha inválidos");
@@ -61,8 +40,7 @@ export default function LoginScreen({
       style={[
         styles.container,
         {
-          backgroundColor:
-            theme.background,
+          backgroundColor: theme.background,
         },
       ]}
     >
@@ -91,17 +69,13 @@ export default function LoginScreen({
 
       <TextInput
         placeholder="alan.turing@exemplo.com"
-        placeholderTextColor={
-          theme.subtitle
-        }
+        placeholderTextColor={theme.subtitle}
         style={[
           styles.input,
           {
-            backgroundColor:
-              theme.card,
+            backgroundColor: theme.card,
             color: theme.text,
-            borderColor:
-              theme.subtitle,
+            borderColor: theme.subtitle,
           },
         ]}
         value={email}
@@ -117,17 +91,13 @@ export default function LoginScreen({
       >
         <TextInput
           placeholder="Senha"
-          placeholderTextColor={
-            theme.subtitle
-          }
+          placeholderTextColor={theme.subtitle}
           style={[
             styles.input,
             {
-              backgroundColor:
-                theme.card,
+              backgroundColor: theme.card,
               color: theme.text,
-              borderColor:
-                theme.subtitle,
+              borderColor: theme.subtitle,
               paddingRight: 50,
             },
           ]}
@@ -137,11 +107,7 @@ export default function LoginScreen({
         />
 
         <TouchableOpacity
-          onPress={() =>
-            setShowPassword(
-              !showPassword
-            )
-          }
+          onPress={() => setShowPassword(!showPassword)}
           style={{
             position: "absolute",
             right: 15,
@@ -149,11 +115,7 @@ export default function LoginScreen({
           }}
         >
           <Feather
-            name={
-              showPassword
-                ? "eye-off"
-                : "eye"
-            }
+            name={showPassword ? "eye-off" : "eye"}
             size={22}
             color={theme.text}
           />
@@ -164,24 +126,15 @@ export default function LoginScreen({
         style={[
           styles.button,
           {
-            backgroundColor:
-              theme.primary,
+            backgroundColor: theme.primary,
           },
         ]}
         onPress={handleLogin}
       >
-        <Text style={styles.buttonText}>
-          Entrar
-        </Text>
+        <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate(
-            "Register"
-          )
-        }
-      >
+      <TouchableOpacity onPress={() => navigation.navigate("Register")}>
         <Text
           style={[
             styles.link,

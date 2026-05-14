@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback, useContext } from "react";
-
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
-
 import { Feather } from "@expo/vector-icons";
+
 import ThemeContext from "../context/ThemeContext";
 import { supabase } from "../services/supabase";
 import { SafeAreaView } from "react-native-safe-area-context";

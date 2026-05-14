@@ -1,13 +1,10 @@
 import React, { useState, useContext } from "react";
-
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
-
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 
 import ThemeContext from "../context/ThemeContext";
 import { supabase } from "../services/supabase";
-
 import styles from "../../styles";
 
 export default function RegisterScreen({ navigation }) {
