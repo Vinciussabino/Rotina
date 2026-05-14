@@ -100,12 +100,30 @@ npx expo start
 
 # 📸 Preview
 
+## Tela de Login 🔑
+
 <p align="center">
-  <img src="./assets/readme/LOGINSCREEN.png" width="230"/>
-  <img src="./assets/readme/HOMESCREEN.png" width="230"/>
-  <img src="./assets/readme/TASKSCREEN.png" width="230"/>
-  <img src="./assets/readme/SETTINGSSCREEN.png" width="230"/>
+  <img src="./assets/readme/LOGINSCREEN.png" width="460"/>
 </p>
+
+## Tela Inicial 🏠
+
+<p align="center">
+  <img src="./assets/readme/HOMESCREEN.png" width="460"/>
+</p>
+
+## Tela Adicionar Tarefa 📝
+
+<p align="center">
+  <img src="./assets/readme/TASKSCREEN.png" width="460"/>
+</p>
+
+## Tela Configurações ⚙
+
+<p align="center">
+  <img src="./assets/readme/SETTINGSSCREEN.png" width="460"/>
+</p>
+
 
 ---
 
