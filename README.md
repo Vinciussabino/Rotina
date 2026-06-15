@@ -131,4 +131,3 @@ npx expo start
 
 Desenvolvido por:
 Marcos Vinícius Fernandes Sabino.
-Matrícula: 01791823.
